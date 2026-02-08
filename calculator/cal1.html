@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head><title>Calculator</title>
+<style>
+
+	body{
+		margin:auto;
+		height:100vh;
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		background-image: url(img.jpg);
+		
+	}
+
+	.main{
+		border: 3px solid #008080;
+		height:13cm;
+		width:13cm;
+		background-image: linear-gradient(45deg,grey);
+		display:flex;
+		flex-direction:column;
+		align-items:center;
+	}
+
+	h1{
+		background-color: blue;
+		text-align:center;
+		width:10cm;
+		border: 3px solid black;
+		border-radius:10px;
+		color:white;
+	}
+
+	.inp{
+		width: 9.65cm;
+		height:1.2cm;
+		padding:5px;
+		border-radius:10px;
+		margin:10px auto;
+	}
+
+	input{
+		font-size:20px;
+		width:350px;
+		height:1cm;
+		text-align:right;
+	}
+
+	.full{
+	background-color:white;
+	width:10cm;
+	border-radius:10px;
+	padding:10px;
+	display:flex;
+	justify-content:center;
+	}
+
+	.keys{
+	display:grid;
+	grid-template-columns: repeat(4, 60px);
+	gap:10px;
+	}
+
+	button{
+		border-radius:10px;
+		background-color:red;
+		color:white;
+		width:60px;
+		height:50px;
+		font-size:18px;
+		border-color:black;
+		cursor:pointer;
+	}
+
+</style>
+</head>
+
+<body>
+
+<div class="main">
+
+<h1>Calculator</h1>
+
+<div class="inp">
+<input type="text" id="dis">
+</div>
+
+<div class="full">
+<div class="keys">
+
+<button onclick="press('7')">7</button>
+<button onclick="press('8')">8</button>
+<button onclick="press('9')">9</button>
+<button onclick="press('/')">/</button>
+
+<button onclick="press('4')">4</button>
+<button onclick="press('5')">5</button>
+<button onclick="press('6')">6</button>
+<button onclick="press('*')">*</button>
+
+<button onclick="press('1')">1</button>
+<button onclick="press('2')">2</button>
+<button onclick="press('3')">3</button>
+<button onclick="press('-')">-</button>
+
+<button onclick="press('0')">0</button>
+<button onclick="press('.')">.</button>
+<button onclick="del()">del</button>
+<button onclick="press('+')">+</button>
+
+<button onclick="clearrr()" style="width:130px;">clear</button>&nbsp;&nbsp;&nbsp;
+<button onclick="calculate()">=</button>
+
+</div>
+</div>
+
+<script>
+let exp="";
+
+function press(value){
+exp=exp+value;
+document.getElementById("dis").value=exp;
+}
+
+function calculate(){
+exp=eval(exp);
+document.getElementById("dis").value=exp;
+}
+
+function clearrr(){
+exp="";
+document.getElementById("dis").value="";
+}
+
+function del(){
+exp = exp.slice(0,-1);
+document.getElementById("dis").value=exp;
+}
+</script>
+
+</div>
+
+</body>
+</html>
